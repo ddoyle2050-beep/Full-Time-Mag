@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <title>Students - FULL-TIME</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'VT323', monospace;
+      min-height: 100vh;
+      overflow: auto;
+      color: #111;
+      background: #dedede;
+    }
+
+    /* Moving text band (same as before) */
+    .ticker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      background: rgba(146, 7, 167, 0.473);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .ticker-inner {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: tickerScroll 60s linear infinite;
+    }
+
+    .ticker-inner span {
+      padding-right: 10rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    @keyframes tickerScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Main layout (under ticker) */
+    .page {
+      position: relative;
+      min-height: 100vh;
+      padding-top: 48px; /* so content sits under ticker */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TOP 2/3 BANNER */
+
+    .banner-link {
+      display: block;
+      height: 66vh;
+      min-height: 60vh;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-image: url("Images/LilNunu/NUNU1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+ 
+    .banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.05)
+      );
+      pointer-events: none;
+    }
+
+    .banner-inner {
+      position: relative;
+      max-width: 720px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 18px;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      padding: 1.5rem 1.8rem;
+      text-align: left;
+
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .banner-link:hover .banner-inner {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 55px rgba(146, 7, 167, 0.9);
+    }
+
+    .banner-eyebrow {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+
+    .banner-title {
+      font-family: 'VT323', monospace;
+      font-size: clamp(2.6rem, 6vw, 3.6rem);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .banner-subtitle {
+      font-size: 1.1rem;
+      max-width: 30rem;
+      opacity: 0.85;
+      margin-bottom: 1.2rem;
+      line-height: 1.4;
+    }
+
+    .banner-tagline {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    /* BOTTOM 1/3 – smooth moving background, no glitch */
+
+    .bottom-section {
+      position: relative;
+      height: 34vh;
+      min-height: 220px;
+      overflow: hidden;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .bottom-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg,
+        #dedede,
+        #A19F9F,
+        #8C8B8B,
+        #E8E6E6,
+        #5C5B5B
+      );
+      background-size: 400% 400%;
+      /* Only smooth movement now – no glitchFlash */
+      animation: bgShift 12s infinite alternate ease-in-out;
+      opacity: 0.95;
+    }
+
+    @keyframes bgShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .bottom-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .bottom-title {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 0.75rem;
+    }
+
+    .bottom-subtitle {
+      max-width: 480px;
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 1.6rem;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .enter-btn {
+      padding: 0.9rem 2.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.6);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(6px);
+      color: #000;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .enter-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(146, 7, 167, 0.473);
+      background: rgba(255,255,255,0.9);
+    }
+
+    @media (max-width: 768px) {
+      .banner {
+        padding: 1.5rem 1.1rem;
+      }
+
+      .banner-inner {
+        padding: 1.2rem 1.3rem;
+      }
+
+      .bottom-section {
+        height: 40vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ticker stays the same -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>STUDENTS FULL TIME</span>
+       <span>FULL-TIME MAG</span>
+        <span>WELCOME</span>
+      <span>GET THAT INYa LEHDDDDD</span>
+      <span>STUDENTS FULL TIME</span>
+       <span>FULL-TIME MAG</span>
+      <span>LIL NUNU INTERVIEW COMING SOON</span>
+      <span>WELCOME</span>
+      <span>GET THAT INYa LEHDDDDD</span>
+      <span>STUDENTS FULL TIME</span>
+      <span>FULL-TIME MAG</span>
+      <span>LIL NUNU INTERVIEW COMING SOON</span>
+      <span>WELCOME</span>
+      <span>GET THAT INYa LEHDDDDD</span>
+      <span>STUDENTS FULL TIME</span>
+        <span>FULL-TIME MAG</span>
+      <span>LIL NUNU INTERVIEW COMING SOON</span>
+      <span>WELCOME</span>
+      <span>GET THAT INYa LEHDDDDD</span>
+      <span>STUDENTS FULL TIME</span>
+        <span>FULL-TIME MAG</span>
+      <span>LIL NUNU INTERVIEW COMING SOON</span>
+      <span>WELCOME</span>
+      <span>GET THAT INYa LEHDDDDD</span>
+      <span>STUDENTS FULL TIME</span>
+        <span>FULL-TIME MAG</span>
+      <span>LIL NUNU INTERVIEW COMING SOON</span>
+      <span>WELCOME</span>
+      <span>GET THAT INYa LEHDDDDD</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <!-- TOP 2/3 BANNER (clickable) -->
+    <!-- change href to where you want the interview to live -->
+    <a href="Blog Posts/NUNUinterview.html" class="banner-link">
+      <section class="banner">
+        <div class="banner-inner">
+          <div class="banner-eyebrow">NEW EXCLUSIVE INTERVIEW</div>
+          <h1 class="banner-title">LIL NUNU</h1>
+          <p class="banner-subtitle">
+            Exclusive interview with Sydney's greatest export since Tim Cahill. 
+            Get to know the next big star coming out of Den Haag before his 
+            Song and Music Video drop later this month.
+          </p>
+          <p class="banner-tagline">
+            Click anywhere on this banner to enter.
+          </p>
+        </div>
+      </section>
+    </a>
+
+    
+    <section class="bottom-section">
+      <div class="bottom-bg"></div>
+
+      <div class="bottom-inner">
+        <h2 class="bottom-title">Full-time Mag</h2>
+        <p class="bottom-subtitle">
+          Full site coming soon....
+        </p>
+
+        <div class="button-group">
+          <a href="Blog Posts/Blog_Entry.html" class="enter-btn">Enter Full-time MAG</a>
+          <a href="Artistotw.html" class="enter-btn">ARTIST OF THE WEEK?</a>
+          <a href="https://www.youtube.com/@fulltimestudents" class="enter-btn">Press here to be entertained</a>
+        <a style="color: Black" href="https://www.instagram.com/students__fulltime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Students Full-Time</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
