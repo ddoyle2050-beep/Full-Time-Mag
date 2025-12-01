@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interview – Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Clean readable font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #E8E6E6;
+      color: #111;
+      line-height: 1.7;
+      padding-bottom: 4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 2rem;
+      border-bottom: 1px solid #ccc;
+      background: #dedede; /* another light gray from your palette */
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+     .wrapper {
+      max-width: 640px;
+      width: 100%;
+      padding: 2.5rem 1.8rem 3rem;
+      background: #dedede;
+      border-radius: 18px;
+      border: 1px solid #c4c4c4;
+      box-shadow: 0 18px 40px rgba(146, 7, 167, 0.473);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        max-width: 100%;
+        padding: 1.5rem 1rem 2rem;
+      }
+
+      img {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+
+        .corner-image {
+      position: absolute;
+      top: 210px;
+      right: 20px;
+      width: 350px;
+      margin: 0;
+      z-index: 10;
+    }
+
+    .corner-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .corner-image figcaption {
+      font-size: 0.75rem;
+      text-align: center;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .corner-image {
+        display: none;
+      }
+    }
+
+    .qa-block {
+      margin-bottom: 2rem;
+    }
+
+    .question {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .answer {
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>EXCLUSIVE</h1>
+    <h2>Lil Nunu - The Chosen One</h2>
+  </header>
+
+   <div class="container">
+
+    <a href="Blog_Entry.html" class="back-link" style="color: #333;">⟵ FULL-TIME BLOG HOME PAGE</a>
+
+    <!-- Top right corner image - stays fixed -->
+    <figure class="corner-image">
+      <img src="../Images/LilNunu/Nunu mvid still.png" alt="Corner image">
+      <figcaption style="font-style: italic;">A still from Lil Nunu's music video - Dropping this December</figcaption>
+    </figure>
+
+    <p>Eccentric.</p>
+    <p>Charismatic.</p>
+    <p>Out of control.</p>
+    <p>Wise.</p>
+    <p>Humble.</p>
+    <p>A few words that have been used to describe Sydney’s greatest export since Tim Cahill. </p>
+    <p>Born and raised in Sydney’s Inner West, Lil Nunu has been surrounded by Sydney’s creative 
+        scene as well as a strong impact of street culture and crime from young. More recently, Nunu has jumped ships 
+        and currently resides in the artistic hub of Den Haag, Netherlands where he study’s photography and art at one of the worlds top art schools. 
+        Lil Nunu has been creating for almost a decade now, however until recently had been mainly focused on capturing beauty through photography and videography. Finally, 
+        we get to see him in front of the camera and mic instead of behind. </p>
+    <p>Lil Nunu is a big personality, exemplified by his egotistical yet vulnerable persona, 
+        express both his love for himself and what he is capable of as well as living with his heart on his sleeve. 
+        This image that Nunu has created, with heavy influences from the likes of Lil Peep, culminates on one of the 
+        most visually pleasing, entertaining 
+        and thought-provoking Instagram pages we have ever seen @lilnunu03.</p>
+    <p>Us here at Full-Time Mag absolutely cannot wait for his debut song and music video to drop this December. We sat down and 
+        had a chat with Nunu a couple of weeks ago, here’s what he had to say:</p>
+
+
+      <!-- Photo -->
+    <div class="qa-block">
+      <img src="../Images/LilNunu/NUNU1.jpg" alt="Lil Nunu Portrait- Head down - Fresh as adlay" style="width: 100%; border-radius: 8px;">
+        <p class="image-caption" style="font-size: xx-small; font-style: italic;">Lil Nunu portrait - Wow Cuz - Photo Credit: Leon Griessmayr</p>
+    </div>
+
+    <!-- Q1 -->
+    <div class="qa-block">
+      <div class="question">When did you know you would make it big?</div>
+      <div class="answer">From the day I started.</div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qa-block">
+      <div class="question">How many weet-bix would you have for breakfast 
+        when you were a kid?</div>
+      <div class="answer">6-8 bro with honey.</div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="qa-block">
+      <div class="question">Have you ever done something you regret?</div>
+      <div class="answer">Yes</div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="qa-block">
+      <div class="question">How do you want people to remember you?</div>
+      <div class="answer">I want to be remembered for being a good 
+        cunt to the people around me, making peace and bringing the arts 
+        culture of Australia more to the mainstream. </div>
+    </div>
+
+             <!-- Photo -->
+    <div class="qa-block" style="text-align: left;">
+      <img src="../Images/LilNunu/NUNU2.jpg" alt="Lil Nunu Portrait- Head down - Fresh as adlay" style="width: 60%; border-radius: 8px;">
+      <p class="image-caption" style="font-size: xx-small; font-style: italic;">Lil Nunu looking fresh as adlay - Photo Credit: Leon Griessmayr</p>
+    </div>
+
+    <!-- Q5 -->
+    <div class="qa-block">
+      <div class="question">Where did the name come from?</div>
+      <div class="answer">AThe name was inspired by Lil Peep. 
+        He used his nickname and some friends of mine used to call me ‘nunu’ 
+        so I did the same and used that. </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="qa-block">
+      <div class="question">Why do you have so much swag?</div>
+      <div class="answer">I get it from my mum.</div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="qa-block">
+      <div class="question">Do you have a favourite beer? Or something else?</div>
+      <div class="answer">Yes bro nothing like a VB. Asahi and Haan Superdry are good too. 
+        But a cheap VB goes a long way.</div>
+    </div>
+
+   <!-- Photo -->
+    <div class="qa-block">
+      <img src="../Images/LilNunu/lil peep singlecopy.jpg" alt="Lil Nunu Portrait- Head down - Fresh as adlay" style="width: 60%; border-radius: 8px;">
+        <p class="image-caption" style="font-size: xx-small;font-style: italic;">Lil Nunu artwork of one of his inspirations - Lil Peep</p>
+    </div>
+
+    <!-- Q8 -->
+    <div class="qa-block">
+      <div class="question">Who are your inspirations? Do you even have any?</div>
+      <div class="answer">Lil Peep bro. This guy started it all man. The new gen music pays its credit to Lil Peep. 
+        Tetohundred is good too, and Posseshot. I stole the lyric ‘I got a papercut’ 
+        from Teto in my new song that is coming out soon. Also I get so much inspiration from my friends and 
+        family, and the way they have supported me. 
+        I wouldn’t be anyone without them. </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="qa-block">
+      <div class="question">How do you brush your teeth? Water or toothpaste first?</div>
+      <div class="answer">Toothpaste first then water. Make sure you wash your tongue at the end, 
+        and I floss once a night. </div>
+    </div>
+
+
+    <!-- Video -->
+    <div class="qa-block">
+      <video width="100%" style="border-radius: 8px;" controls>
+        <source src="../Videos/Lil Nunu/tattoo draft 3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-caption"style="font-size: xx-small; font-style: italic;">Lil Nunu getting tattoos done - Make up Artists: Caterina Carrilho and Campos Graafmans</p>
+    </div>
+
+    <!-- Q10 -->
+    <div class="qa-block">
+      <div class="question">Are you interested in the arts?</div>
+      <div class="answer">Yeah, life is boring without it. Creating feels like a necessity, 
+        and consuming feels like the reward. A few years ago my dad put me onto the book ‘Just Kids’ 
+        by Patti Smith and it was a pivotal moment for me. She showed me a different way of living, 
+        that gave me the belief to go against the systematic lifestyle I grew up around. </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="qa-block">
+      <div class="question">Have you ever wanted to punch someone?</div>
+      <div class="answer">Yeah I cracked some guy in the jaw before and he 
+        snapped back with three and put me to the ground. </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="qa-block">
+      <div class="question">Have you ever wanted to love someone?</div>
+      <div class="answer">I have loved before, life is nothing without love 
+        especially from friends and family. 
+        Love can hurt too but overall we need it to do more than just survive.</div>
+    </div>
+
+    <!-- Photo -->
+    <div class="qa-block">
+      <img src="../Images/LilNunu/Contat sheet of portraits-compressed.pdf" alt="Lil Nunu Portrait- Head down - Fresh as adlay" style="width: 100%; border-radius: 8px;">
+        <p class="image-caption" style="font-size: xx-small; font-style: italic;">Contact sheet of portraits - Lil Nunu</p>
+    </div>
+
+
+
+    <!-- Q13 -->
+    <div class="qa-block">
+      <div class="question">Do you feel like you are a good influence on your audience? 
+        Or maybe you are just an influence?</div>
+      <div class="answer">I would be happy to be any kind of influence.</div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="qa-block">
+      <div class="question">What is Lil nunu like off camera?</div>
+      <div class="answer">That's only for the close ones around me to know.</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
