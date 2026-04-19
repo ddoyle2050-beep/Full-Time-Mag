@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -180,7 +180,9 @@
       padding: 1rem;
       box-sizing: border-box;
     }
-
+    .photo-overlay {
+      pointer-events: none;
+    }
     .photo-card:hover .photo-overlay {
       opacity: 1;
     }
@@ -202,16 +204,43 @@
         height: 260px;
       }
     }
+
+    .lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
   </style>
 </head>
 
 <body>
   <header>
     <h1>Bikes of Sydney</h1>
-     <a href="https://www.instagram.com/everydaybikestyle?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" style="color: #6a009b;">
+    <a href="https://www.instagram.com/everydaybikestyle?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" style="color: #6a009b;">
   <h2>Via Everyday Bike Style on Instagram</h2>
 </a>
-
     <a href="Blog_Entry.html" class="back-link" style="color: #333;">⟵ FULL-TIME MAG INDEX</a>
   </header>
 
@@ -247,7 +276,7 @@
           </div>
         </div>
 
-        <div class="photo-card">
+       <div class="photo-card">
           <img src="../Images/Bikes/Babyblu.jpg" alt="Baby Blue bike in Enmore">
           <div class="photo-overlay">
             <div class="photo-caption">Baby Blue bike in Enmore. Photo credit: Liam Hunter</div>
@@ -289,9 +318,40 @@
               <div class="photo-caption">Red bike Red bike. Photo credit: Liam Hunter</div>
             </div>
           </div>
+      </div>     
     </section>
 
   </div>
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" id="lightbox-img">
+</div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  document.querySelectorAll(".photo-card img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = "none";
+    }
+  });
+
+});
+</script>
 </body>
 </html>
